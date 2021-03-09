@@ -11,9 +11,7 @@ public class ReverseStringTest {
     }
 
     @Test
-    public void testAWord() {
-        assertEquals("tobor", new ReverseString().reverse("robot"));
-    }
+    public void testAWord() { assertEquals("tobor", new ReverseString().reverse("robot")); }
 
     @Test
     public void testACapitalizedWord() {
