@@ -28,4 +28,19 @@ class ReverseString {
 
         return new String(charArray);
     }
+
+    public String reverseWithByteStream(String inputString) {
+        if (inputString == "") {
+            return "";
+        }
+
+        byte[] inputAsBytes = inputString.getBytes();
+        byte[] byteStream = new byte[inputAsBytes.length];
+
+        for (int i = 0; i < inputAsBytes.length; i++) {
+            byteStream[i] = inputAsBytes[inputAsBytes.length - i - 1];
+        }
+
+        return new String(byteStream);
+    }
 }
