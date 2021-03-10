@@ -1,17 +1,17 @@
 class ReverseString {
 
-//    public String reverse(String inputString) {
-//        if (inputString == "") {
-//            return "";
-//        }
-//
-//        StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append(inputString);
-//
-//        return stringBuilder.reverse().toString();
-//    }
-
     public String reverse(String inputString) {
+        if (inputString == "") {
+            return "";
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(inputString);
+
+        return stringBuilder.reverse().toString();
+    }
+
+    public String reverseWithCharArray(String inputString) {
         if (inputString == "") {
             return "";
         }
@@ -25,8 +25,6 @@ class ReverseString {
             charArray[left] = charArray[right];
             charArray[right] = temp;
         }
-
-        System.out.println(charArray);
 
         return new String(charArray);
     }
