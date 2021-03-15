@@ -42,6 +42,7 @@ public class ResistorColorTest {
         String[] expected = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
         System.out.println(resistorColor.colors());
         assertEquals(expected, resistorColor.colors());
-    }
+        assertEquals(expected, resistorColor.colorsWithStream());
+ }
     
 }

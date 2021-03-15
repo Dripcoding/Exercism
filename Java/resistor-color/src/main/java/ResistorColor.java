@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class ResistorColor {
     public enum ColorsEnum {
@@ -22,6 +23,10 @@ class ResistorColor {
             this.value = value;
         }
 
+        public String getLabel() {
+            return this.label;
+        }
+
         public int getValue() {
             return this.value;
         }
@@ -35,6 +40,10 @@ class ResistorColor {
 
             return colorNames.toArray(String[]::new);
         }
+
+        public static String[] getColorNamesWithStream() {
+            return Arrays.stream(ColorsEnum.values()).map(ColorsEnum::getLabel).toArray(String[]::new);
+        }
     }
 
     public int colorCode(String color) {
@@ -43,5 +52,9 @@ class ResistorColor {
 
     public String[] colors() {
         return ColorsEnum.getColorNames();
+    }
+
+    public String[] colorsWithStream() {
+        return ColorsEnum.getColorNamesWithStream();
     }
 }
