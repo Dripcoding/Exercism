@@ -17,8 +17,10 @@ public class ResistorColorDuoTest {
         String[] input = { "brown", "black" };
         int expected = 10;
         int actual = resistorColorDuo.value(input);
+        int actual1 = resistorColorDuo.valueUsingStreams(input);
 
         assertEquals(expected, actual);
+        assertEquals(expected, actual1);
     }
 
     @Test
@@ -26,8 +28,10 @@ public class ResistorColorDuoTest {
         String[] input = { "blue", "grey" };
         int expected = 68;
         int actual = resistorColorDuo.value(input);
+        int actual1 = resistorColorDuo.valueUsingStreams(input);
 
         assertEquals(expected, actual);
+        assertEquals(expected, actual1);
     }
 
     @Test
@@ -35,8 +39,10 @@ public class ResistorColorDuoTest {
         String[] input = { "yellow", "violet" };
         int expected = 47;
         int actual = resistorColorDuo.value(input);
+        int actual1 = resistorColorDuo.valueUsingStreams(input);
 
         assertEquals(expected, actual);
+        assertEquals(expected, actual1);
     }
 
     @Test
@@ -44,8 +50,10 @@ public class ResistorColorDuoTest {
         String[] input = { "orange", "orange" };
         int expected = 33;
         int actual = resistorColorDuo.value(input);
+        int actual1 = resistorColorDuo.valueUsingStreams(input);
 
         assertEquals(expected, actual);
+        assertEquals(expected, actual1);
     }
 
     @Test
@@ -53,7 +61,9 @@ public class ResistorColorDuoTest {
         String[] input = { "green", "brown", "orange" };
         int expected = 51;
         int actual = resistorColorDuo.value(input);
+        int actual1 = resistorColorDuo.valueUsingStreams(input);
 
         assertEquals(expected, actual);
+        assertEquals(expected, actual1);
     }
 }

@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 class ResistorColorDuo {
     public enum ColorsEnum {
         black( "black", "0"),
@@ -32,5 +35,14 @@ class ResistorColorDuo {
         }
         result = Integer.parseInt(stringBuilder.toString());
         return result;
+    }
+
+    public int valueUsingStreams(String[] colors) {
+        String result = Arrays.stream(colors)
+                .limit(2)
+                .map(color -> ColorsEnum.valueOf(color).getValue())
+                .collect(Collectors.joining());
+
+        return Integer.parseInt(result);
     }
 }
