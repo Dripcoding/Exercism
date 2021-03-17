@@ -45,4 +45,12 @@ class ResistorColorDuo {
 
         return Integer.parseInt(result);
     }
+
+    public int valueUsingStreamsReduce(String[] colors) {
+        String result = Arrays.stream(colors)
+                .limit(2)
+                .reduce("", (prev, next) -> prev + ColorsEnum.valueOf(next).getValue());
+
+        return Integer.parseInt(result);
+    }
 }

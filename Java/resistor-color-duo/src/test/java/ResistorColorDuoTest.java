@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ResistorColorDuoTest {
     private ResistorColorDuo resistorColorDuo;
@@ -18,9 +19,11 @@ public class ResistorColorDuoTest {
         int expected = 10;
         int actual = resistorColorDuo.value(input);
         int actual1 = resistorColorDuo.valueUsingStreams(input);
+        int actual2 = resistorColorDuo.valueUsingStreamsReduce(input);
 
         assertEquals(expected, actual);
         assertEquals(expected, actual1);
+        assertEquals(expected, actual2);
     }
 
     @Test
@@ -29,9 +32,11 @@ public class ResistorColorDuoTest {
         int expected = 68;
         int actual = resistorColorDuo.value(input);
         int actual1 = resistorColorDuo.valueUsingStreams(input);
+        int actual2 = resistorColorDuo.valueUsingStreamsReduce(input);
 
         assertEquals(expected, actual);
         assertEquals(expected, actual1);
+        assertEquals(expected, actual2);
     }
 
     @Test
@@ -40,9 +45,11 @@ public class ResistorColorDuoTest {
         int expected = 47;
         int actual = resistorColorDuo.value(input);
         int actual1 = resistorColorDuo.valueUsingStreams(input);
+        int actual2 = resistorColorDuo.valueUsingStreamsReduce(input);
 
         assertEquals(expected, actual);
         assertEquals(expected, actual1);
+        assertEquals(expected, actual2);
     }
 
     @Test
@@ -51,9 +58,11 @@ public class ResistorColorDuoTest {
         int expected = 33;
         int actual = resistorColorDuo.value(input);
         int actual1 = resistorColorDuo.valueUsingStreams(input);
+        int actual2 = resistorColorDuo.valueUsingStreamsReduce(input);
 
         assertEquals(expected, actual);
         assertEquals(expected, actual1);
+        assertEquals(expected, actual2);
     }
 
     @Test
@@ -62,8 +71,10 @@ public class ResistorColorDuoTest {
         int expected = 51;
         int actual = resistorColorDuo.value(input);
         int actual1 = resistorColorDuo.valueUsingStreams(input);
+        int actual2 = resistorColorDuo.valueUsingStreamsReduce(input);
 
         assertEquals(expected, actual);
         assertEquals(expected, actual1);
+        assertEquals(expected, actual2);
     }
 }
