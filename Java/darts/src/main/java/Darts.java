@@ -12,14 +12,14 @@ class Darts {
 
     int score() {
         double dist = getDistanceFromCenter();
-        if (dist > OUTER_CIRCLE_RADIUS) {
-            return 0;
-        } else if (dist <= OUTER_CIRCLE_RADIUS && dist > MIDDLE_CIRCLE_RADIUS) {
-            return 1;
-        } else if (dist <= MIDDLE_CIRCLE_RADIUS && dist > INNER_CIRCLE_RADIUS) {
-            return 5;
-        } else {
+        if (dist <= INNER_CIRCLE_RADIUS) {
             return 10;
+        } else if (dist <= MIDDLE_CIRCLE_RADIUS) {
+            return 5;
+        } else if (dist <= OUTER_CIRCLE_RADIUS) {
+            return 1;
+        } else {
+            return 0;
         }
     }
 
