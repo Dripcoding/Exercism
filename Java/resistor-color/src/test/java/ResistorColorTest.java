@@ -17,7 +17,7 @@ public class ResistorColorTest {
     public void testBlackColorCode() {
         String input = "black";
         int expected = 0;
-
+        System.out.println();
         assertEquals(expected, resistorColor.colorCode(input));
     }
 
