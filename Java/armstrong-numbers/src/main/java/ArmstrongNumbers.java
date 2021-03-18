@@ -20,9 +20,6 @@ class ArmstrongNumbers {
     }
 
     public double getNumberOfDigits(int numberToCheck) {
-        if (numberToCheck == 0) {
-            return 0;
-        }
         return Math.log10(numberToCheck) + 1;
     }
 
