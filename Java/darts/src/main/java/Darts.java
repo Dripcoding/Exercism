@@ -10,7 +10,7 @@ class Darts {
         this.y = y;
     }
 
-    int score() {
+    public int score() {
         double dist = getDistanceFromCenter();
         if (dist <= INNER_CIRCLE_RADIUS) {
             return 10;
@@ -23,7 +23,7 @@ class Darts {
         }
     }
 
-    double getDistanceFromCenter() {
+    public double getDistanceFromCenter() {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 
