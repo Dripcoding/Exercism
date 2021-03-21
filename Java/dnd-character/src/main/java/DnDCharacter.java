@@ -3,13 +3,13 @@ import java.util.Collections;
 import java.util.List;
 
 class DnDCharacter {
-    private int strength;
-    private int dexterity;
-    private int constitution;
-    private int intelligence;
-    private int wisdom;
-    private int charisma;
-    private int hitPoints;
+    private final int strength;
+    private final int dexterity;
+    private final int constitution;
+    private final int intelligence;
+    private final int wisdom;
+    private final int charisma;
+    private final int hitPoints;
 
     public DnDCharacter() {
         this.strength = ability();
@@ -21,7 +21,7 @@ class DnDCharacter {
         this.hitPoints = ability();
     }
 
-    int ability() {
+    public int ability() {
         List<Integer> scores = new ArrayList();
         for (int i = 0; i < 6; i++) {
             scores.add((int) ((Math.random() * 6) + 1));
@@ -36,35 +36,35 @@ class DnDCharacter {
         return score - smallestScore;
     }
 
-    int modifier(int input) {
+    public int modifier(int input) {
         return (int) Math.floor((input - 10) / 2.0);
     }
 
-    int getStrength() {
+    public int getStrength() {
         return strength;
     }
 
-    int getDexterity() {
+    public int getDexterity() {
         return dexterity;
     }
 
-    int getConstitution() {
+    public int getConstitution() {
         return constitution;
     }
 
-    int getIntelligence() {
+    public int getIntelligence() {
         return intelligence;
     }
 
-    int getWisdom() {
+    public int getWisdom() {
         return wisdom;
     }
 
-    int getCharisma() {
+    public int getCharisma() {
         return charisma;
     }
 
-    int getHitpoints() {
+    public int getHitpoints() {
         return 10 + modifier(getConstitution());
     }
 
