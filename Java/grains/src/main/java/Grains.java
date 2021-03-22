@@ -1,7 +1,6 @@
 import java.math.BigInteger;
 
 class Grains {
-
     static final BigInteger BIG_INTEGER_2 = BigInteger.valueOf(2);
 
     public BigInteger grainsOnSquare(final int square) {
@@ -9,6 +8,13 @@ class Grains {
             throw new IllegalArgumentException("square must be between 1 and 64");
         }
         return BIG_INTEGER_2.pow(square - 1);
+    }
+
+    public BigInteger grainsOnSquareShiftLeft(final int square) {
+        if (square < 1 || square > 64) {
+            throw new IllegalArgumentException("square must be between 1 and 64");
+        }
+        return BigInteger.ONE.shiftLeft(square - 1);
     }
 
     public BigInteger grainsOnBoard() {
@@ -19,4 +25,7 @@ class Grains {
         return total;
     }
 
+    public BigInteger grainsOnBoardUsingShiftLeft() {
+        return BigInteger.TWO.shiftLeft(63);
+    }
 }
