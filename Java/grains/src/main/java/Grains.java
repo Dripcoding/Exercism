@@ -25,7 +25,7 @@ class Grains {
         return total;
     }
 
-    public BigInteger grainsOnBoardUsingShiftLeft() {
-        return BigInteger.TWO.shiftLeft(63);
+    public BigInteger grainsOnBoardShiftLeft() {
+        return BigInteger.ONE.shiftLeft(64).subtract(BigInteger.ONE);
     }
 }

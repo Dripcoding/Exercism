@@ -79,8 +79,14 @@ public class GrainsTest {
                 assertThrows(
                         IllegalArgumentException.class,
                         () -> grains.grainsOnSquare(0));
+        IllegalArgumentException expected1 =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> grains.grainsOnSquareShiftLeft(0));
 
         assertThat(expected)
+                .hasMessage("square must be between 1 and 64");
+        assertThat(expected1)
                 .hasMessage("square must be between 1 and 64");
     }
 
@@ -90,8 +96,14 @@ public class GrainsTest {
                 assertThrows(
                         IllegalArgumentException.class,
                         () -> grains.grainsOnSquare(-1));
+        IllegalArgumentException expected1 =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> grains.grainsOnSquareShiftLeft(-1));
 
         assertThat(expected)
+                .hasMessage("square must be between 1 and 64");
+        assertThat(expected1)
                 .hasMessage("square must be between 1 and 64");
     }
 
@@ -101,15 +113,24 @@ public class GrainsTest {
                 assertThrows(
                         IllegalArgumentException.class,
                         () -> grains.grainsOnSquare(65));
+        IllegalArgumentException expected1 =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> grains.grainsOnSquareShiftLeft(65));
 
         assertThat(expected)
+                .hasMessage("square must be between 1 and 64");
+        assertThat(expected1)
                 .hasMessage("square must be between 1 and 64");
     }
 
     @Test
     public void totalNumberOfGrainsOnABoard() {
         BigInteger total = grains.grainsOnBoard();
+        BigInteger total1 = grains.grainsOnBoardShiftLeft();
+
         assertEquals(new BigInteger("18446744073709551615"), total);
+        assertEquals(new BigInteger("18446744073709551615"), total1);
     }
 
 }
