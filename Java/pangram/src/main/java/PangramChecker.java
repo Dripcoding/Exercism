@@ -1,7 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
-
 public class PangramChecker {
 
     public static final int LETTERS_IN_ALPHABET = 26;

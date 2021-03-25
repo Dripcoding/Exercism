@@ -8,7 +8,7 @@ public class Twofer {
             return NO_NAME_GIVEN_PHRASE;
         }
 
-        if (name == "") {
+        if (name.isEmpty()) {
             return EMPTY_NAME_GIVEN_PHRASE;
         }
 
