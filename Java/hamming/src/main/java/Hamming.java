@@ -5,10 +5,12 @@ public class Hamming {
     public static final String RIGHT_STRAND_EMPTY = "right strand must not be empty.";
     private final String leftStrand;
     private final String rightStrand;
+    private int hammingDistance;
 
     public Hamming(String leftStrand, String rightStrand) {
         this.leftStrand = leftStrand;
         this.rightStrand = rightStrand;
+        this.hammingDistance = 0;
 
         if (leftStrand.isEmpty() && !rightStrand.isEmpty()) {
             throw new IllegalArgumentException(LEFT_STRAND_EMPTY);
@@ -21,9 +23,11 @@ public class Hamming {
         if (leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException(ERROR_MESSAGE);
         }
+
+        this.hammingDistance = calculateHammingDistance();
     }
 
-    public int getHammingDistance() throws IllegalArgumentException {
+    private int calculateHammingDistance() {
         String leftStrand = this.getLeftStrand();
         String rightStrand = this.getRightStrand();
 
@@ -47,5 +51,9 @@ public class Hamming {
 
     public String getRightStrand() {
         return rightStrand;
+    }
+
+    public int getHammingDistance() {
+        return hammingDistance;
     }
 }
