@@ -6,7 +6,7 @@ class IsogramChecker {
     public IsogramChecker() {
     }
 
-    boolean isIsogram(String phrase) {
+    public boolean isIsogram(String phrase) {
         if (phrase.isEmpty()) {
             return true;
         }
@@ -29,4 +29,12 @@ class IsogramChecker {
         return true;
     }
 
+    public boolean isIsogramWithStreams(String phrase) {
+        String lowerCasePhrase = phrase
+                .replace(" ", "")
+                .replace("-", "")
+                .toLowerCase();
+
+        return lowerCasePhrase.chars().distinct().count() == lowerCasePhrase.length();
+    }
 }
