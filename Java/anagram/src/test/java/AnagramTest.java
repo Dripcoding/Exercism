@@ -15,6 +15,10 @@ public class AnagramTest {
                 detector.match(
                         Arrays.asList("hello", "world", "zombies", "pants")))
                 .isEmpty();
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList("hello", "world", "zombies", "pants")))
+                .isEmpty();
     }
 
     @Test
@@ -22,7 +26,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("master");
 
         assertThat(detector.match(Arrays.asList("stream", "pigeon", "maters")))
-                .containsExactlyInAnyOrder​("maters", "stream");
+                .containsExactlyInAnyOrder("maters", "stream");
+        assertThat(detector.matchWithStream(Arrays.asList("stream", "pigeon", "maters")))
+                .containsExactlyInAnyOrder("maters", "stream");
     }
 
     @Test
@@ -30,6 +36,7 @@ public class AnagramTest {
         Anagram detector = new Anagram("good");
 
         assertThat(detector.match(Arrays.asList("dog", "goody"))).isEmpty();
+        assertThat(detector.matchWithStream(Arrays.asList("dog", "goody"))).isEmpty();
     }
 
     @Test
@@ -39,7 +46,11 @@ public class AnagramTest {
         assertThat(
                 detector.match(
                         Arrays.asList("enlists", "google", "inlets", "banana")))
-                .containsExactlyInAnyOrder​("inlets");
+                .containsExactlyInAnyOrder("inlets");
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList("enlists", "google", "inlets", "banana")))
+                .containsExactlyInAnyOrder("inlets");
     }
 
     @Test
@@ -54,7 +65,17 @@ public class AnagramTest {
                                 "clergy",
                                 "largely",
                                 "leading")))
-                .containsExactlyInAnyOrder​("gallery", "regally", "largely");
+                .containsExactlyInAnyOrder("gallery", "regally", "largely");
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList(
+                                "gallery",
+                                "ballerina",
+                                "regally",
+                                "clergy",
+                                "largely",
+                                "leading")))
+                .containsExactlyInAnyOrder("gallery", "regally", "largely");
     }
 
     @Test
@@ -62,7 +83,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("nose");
 
         assertThat(detector.match(Arrays.asList("Eons", "ONES")))
-                .containsExactlyInAnyOrder​("Eons", "ONES");
+                .containsExactlyInAnyOrder("Eons", "ONES");
+        assertThat(detector.matchWithStream(Arrays.asList("Eons", "ONES")))
+                .containsExactlyInAnyOrder("Eons", "ONES");
     }
 
     @Test
@@ -70,6 +93,8 @@ public class AnagramTest {
         Anagram detector = new Anagram("mass");
 
         assertThat(detector.match(Collections.singletonList("last")))
+                .isEmpty();
+        assertThat(detector.matchWithStream(Collections.singletonList("last")))
                 .isEmpty();
     }
 
@@ -80,7 +105,11 @@ public class AnagramTest {
         assertThat(
                 detector.match(
                         Arrays.asList("cashregister", "Carthorse", "radishes")))
-                .containsExactlyInAnyOrder​("Carthorse");
+                .containsExactlyInAnyOrder("Carthorse");
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Test
@@ -90,7 +119,11 @@ public class AnagramTest {
         assertThat(
                 detector.match(
                         Arrays.asList("cashregister", "carthorse", "radishes")))
-                .containsExactlyInAnyOrder​("carthorse");
+                .containsExactlyInAnyOrder("carthorse");
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList("cashregister", "carthorse", "radishes")))
+                .containsExactlyInAnyOrder("carthorse");
     }
 
     @Test
@@ -100,7 +133,11 @@ public class AnagramTest {
         assertThat(
                 detector.match(
                         Arrays.asList("cashregister", "Carthorse", "radishes")))
-                .containsExactlyInAnyOrder​("Carthorse");
+                .containsExactlyInAnyOrder("Carthorse");
+        assertThat(
+                detector.matchWithStream(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Test
@@ -108,6 +145,8 @@ public class AnagramTest {
         Anagram detector = new Anagram("go");
 
         assertThat(detector.match(Collections.singletonList("go Go GO")))
+                .isEmpty();
+        assertThat(detector.matchWithStream(Collections.singletonList("go Go GO")))
                 .isEmpty();
     }
 
@@ -117,6 +156,8 @@ public class AnagramTest {
 
         assertThat(detector.match(Collections.singletonList("patter")))
                 .isEmpty();
+        assertThat(detector.matchWithStream(Collections.singletonList("patter")))
+                .isEmpty();
     }
 
     @Test
@@ -125,6 +166,8 @@ public class AnagramTest {
 
         assertThat(detector.match(Arrays.asList("BANANA", "Banana", "banana")))
                 .isEmpty();
+        assertThat(detector.matchWithStream(Arrays.asList("BANANA", "Banana", "banana")))
+                .isEmpty();
     }
 
     @Test
@@ -132,7 +175,9 @@ public class AnagramTest {
         Anagram detector = new Anagram("LISTEN");
 
         assertThat(detector.match(Arrays.asList("Listen", "Silent", "LISTEN")))
-                .containsExactlyInAnyOrder​("Silent");
+                .containsExactlyInAnyOrder("Silent");
+        assertThat(detector.matchWithStream(Arrays.asList("Listen", "Silent", "LISTEN")))
+                .containsExactlyInAnyOrder("Silent");
     }
 
 }

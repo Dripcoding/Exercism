@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Anagram {
 
@@ -47,6 +50,19 @@ public class Anagram {
         }
 
         return anagrams;
+    }
+
+    public List<String> matchWithStream(List<String> possibleAnagrams) {
+
+        Predicate<String> possibleAnagramHasAllChars = current ->
+                Arrays.equals(current.toLowerCase().chars().sorted().toArray(),
+                        word.toLowerCase().chars().sorted().toArray());
+        Predicate<String> possibleAnagramIsNotSame = current ->
+                !current.toLowerCase().equals(this.getWord().toLowerCase());
+
+        return possibleAnagrams.stream()
+                .filter(possibleAnagramHasAllChars.and(possibleAnagramIsNotSame))
+                .collect(Collectors.toList());
     }
 
     public String getWord() {
