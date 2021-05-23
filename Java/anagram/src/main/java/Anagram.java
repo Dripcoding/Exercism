@@ -1,10 +1,16 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 public class Anagram {
 
@@ -62,6 +68,19 @@ public class Anagram {
 
         return possibleAnagrams.stream()
                 .filter(possibleAnagramHasAllChars.and(possibleAnagramIsNotSame))
+                .collect(Collectors.toList());
+    }
+
+    public List<String> matchByCheckingCharFrequency(List<String> possibleAnagrams) {
+        Function<String, Map<Character, Long>> findCharFrequency =
+                word -> word.toLowerCase().chars().mapToObj(c -> (char) c).collect(groupingBy(identity(), counting()));
+        Predicate<String> possibleAnagramIsNotSame =
+                current -> !current.toLowerCase().equals(this.getWord().toLowerCase());
+        Predicate<String> possibleAnagramHasSameCharFrequency =
+                current -> findCharFrequency.apply(current).equals(findCharFrequency.apply(word));
+        return possibleAnagrams.stream()
+                .filter(possibleAnagramIsNotSame)
+                .filter(possibleAnagramHasSameCharFrequency)
                 .collect(Collectors.toList());
     }
 

@@ -19,6 +19,10 @@ public class AnagramTest {
                 detector.matchWithStream(
                         Arrays.asList("hello", "world", "zombies", "pants")))
                 .isEmpty();
+        assertThat(
+                detector.matchByCheckingCharFrequency(
+                        Arrays.asList("hello", "world", "zombies", "pants")))
+                .isEmpty();
     }
 
     @Test
@@ -29,6 +33,8 @@ public class AnagramTest {
                 .containsExactlyInAnyOrder("maters", "stream");
         assertThat(detector.matchWithStream(Arrays.asList("stream", "pigeon", "maters")))
                 .containsExactlyInAnyOrder("maters", "stream");
+        assertThat(detector.matchByCheckingCharFrequency(Arrays.asList("stream", "pigeon", "maters")))
+                .containsExactlyInAnyOrder("maters", "stream");
     }
 
     @Test
@@ -37,6 +43,7 @@ public class AnagramTest {
 
         assertThat(detector.match(Arrays.asList("dog", "goody"))).isEmpty();
         assertThat(detector.matchWithStream(Arrays.asList("dog", "goody"))).isEmpty();
+        assertThat(detector.matchByCheckingCharFrequency(Arrays.asList("dog", "goody"))).isEmpty();
     }
 
     @Test
@@ -49,6 +56,10 @@ public class AnagramTest {
                 .containsExactlyInAnyOrder("inlets");
         assertThat(
                 detector.matchWithStream(
+                        Arrays.asList("enlists", "google", "inlets", "banana")))
+                .containsExactlyInAnyOrder("inlets");
+        assertThat(
+                detector.matchByCheckingCharFrequency(
                         Arrays.asList("enlists", "google", "inlets", "banana")))
                 .containsExactlyInAnyOrder("inlets");
     }
@@ -76,6 +87,16 @@ public class AnagramTest {
                                 "largely",
                                 "leading")))
                 .containsExactlyInAnyOrder("gallery", "regally", "largely");
+        assertThat(
+                detector.matchByCheckingCharFrequency(
+                        Arrays.asList(
+                                "gallery",
+                                "ballerina",
+                                "regally",
+                                "clergy",
+                                "largely",
+                                "leading")))
+                .containsExactlyInAnyOrder("gallery", "regally", "largely");
     }
 
     @Test
@@ -86,6 +107,8 @@ public class AnagramTest {
                 .containsExactlyInAnyOrder("Eons", "ONES");
         assertThat(detector.matchWithStream(Arrays.asList("Eons", "ONES")))
                 .containsExactlyInAnyOrder("Eons", "ONES");
+        assertThat(detector.matchByCheckingCharFrequency(Arrays.asList("Eons", "ONES")))
+                .containsExactlyInAnyOrder("Eons", "ONES");
     }
 
     @Test
@@ -95,6 +118,8 @@ public class AnagramTest {
         assertThat(detector.match(Collections.singletonList("last")))
                 .isEmpty();
         assertThat(detector.matchWithStream(Collections.singletonList("last")))
+                .isEmpty();
+        assertThat(detector.matchByCheckingCharFrequency(Collections.singletonList("last")))
                 .isEmpty();
     }
 
@@ -108,6 +133,10 @@ public class AnagramTest {
                 .containsExactlyInAnyOrder("Carthorse");
         assertThat(
                 detector.matchWithStream(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
+        assertThat(
+                detector.matchByCheckingCharFrequency(
                         Arrays.asList("cashregister", "Carthorse", "radishes")))
                 .containsExactlyInAnyOrder("Carthorse");
     }
@@ -124,6 +153,10 @@ public class AnagramTest {
                 detector.matchWithStream(
                         Arrays.asList("cashregister", "carthorse", "radishes")))
                 .containsExactlyInAnyOrder("carthorse");
+        assertThat(
+                detector.matchByCheckingCharFrequency(
+                        Arrays.asList("cashregister", "carthorse", "radishes")))
+                .containsExactlyInAnyOrder("carthorse");
     }
 
     @Test
@@ -138,6 +171,10 @@ public class AnagramTest {
                 detector.matchWithStream(
                         Arrays.asList("cashregister", "Carthorse", "radishes")))
                 .containsExactlyInAnyOrder("Carthorse");
+        assertThat(
+                detector.matchByCheckingCharFrequency(
+                        Arrays.asList("cashregister", "Carthorse", "radishes")))
+                .containsExactlyInAnyOrder("Carthorse");
     }
 
     @Test
@@ -147,6 +184,8 @@ public class AnagramTest {
         assertThat(detector.match(Collections.singletonList("go Go GO")))
                 .isEmpty();
         assertThat(detector.matchWithStream(Collections.singletonList("go Go GO")))
+                .isEmpty();
+        assertThat(detector.matchByCheckingCharFrequency(Collections.singletonList("go Go GO")))
                 .isEmpty();
     }
 
@@ -158,6 +197,8 @@ public class AnagramTest {
                 .isEmpty();
         assertThat(detector.matchWithStream(Collections.singletonList("patter")))
                 .isEmpty();
+        assertThat(detector.matchByCheckingCharFrequency(Collections.singletonList("patter")))
+                .isEmpty();
     }
 
     @Test
@@ -168,6 +209,8 @@ public class AnagramTest {
                 .isEmpty();
         assertThat(detector.matchWithStream(Arrays.asList("BANANA", "Banana", "banana")))
                 .isEmpty();
+        assertThat(detector.matchByCheckingCharFrequency(Arrays.asList("BANANA", "Banana", "banana")))
+                .isEmpty();
     }
 
     @Test
@@ -177,6 +220,8 @@ public class AnagramTest {
         assertThat(detector.match(Arrays.asList("Listen", "Silent", "LISTEN")))
                 .containsExactlyInAnyOrder("Silent");
         assertThat(detector.matchWithStream(Arrays.asList("Listen", "Silent", "LISTEN")))
+                .containsExactlyInAnyOrder("Silent");
+        assertThat(detector.matchByCheckingCharFrequency(Arrays.asList("Listen", "Silent", "LISTEN")))
                 .containsExactlyInAnyOrder("Silent");
     }
 
