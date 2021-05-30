@@ -70,6 +70,22 @@ public class House {
         return completeVerse.toString();
     }
 
+    public String verses(int startVerse, int endVerse) {
+        StringBuilder completeVerses = new StringBuilder();
+
+        for (int i = startVerse; i <= endVerse; i++) {
+            String verse = verse(i);
+            completeVerses.append(verse);
+            completeVerses.append("\n");
+        }
+
+        return completeVerses.toString().trim();
+    }
+
+    public String sing() {
+        return verses(FIRST_VERSE, FINAL_VERSE);
+    }
+
     public String getVerse(int verse) {
         StringBuilder verseBuilder = new StringBuilder("This is ");
 
@@ -89,22 +105,5 @@ public class House {
 
     public String singWithStreams() {
         return getVerses(FIRST_VERSE, FINAL_VERSE);
-    }
-
-    public String verses(int startVerse, int endVerse) {
-        StringBuilder completeVerses = new StringBuilder();
-
-        for (int i = startVerse; i <= endVerse; i++) {
-            String verse = verse(i);
-            completeVerses.append(verse);
-            completeVerses.append("\n");
-            System.out.println(i + " " + verse);
-        }
-
-        return completeVerses.toString().trim();
-    }
-
-    public String sing() {
-        return verses(FIRST_VERSE, FINAL_VERSE);
     }
 }
