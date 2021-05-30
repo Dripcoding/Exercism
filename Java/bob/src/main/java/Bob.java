@@ -12,7 +12,7 @@ public class Bob {
     public String hey(String message) {
         boolean yelling = message.equals(message.toUpperCase()) && message.matches(".*[A-Z].*");
         boolean question = message.trim().matches(".*\\?");
-        boolean silence = message.trim().isEmpty();
+        boolean silence = message.isBlank();
 
         if (yelling && question) {
             return RESPONSE_TO_YELLING_A_QUESTION;
