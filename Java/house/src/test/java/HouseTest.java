@@ -18,6 +18,7 @@ public class HouseTest {
         int verse = 1;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -28,6 +29,7 @@ public class HouseTest {
         int verse = 2;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -39,6 +41,7 @@ public class HouseTest {
         int verse = 3;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -51,6 +54,7 @@ public class HouseTest {
         int verse = 4;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -64,6 +68,7 @@ public class HouseTest {
         int verse = 5;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -78,6 +83,7 @@ public class HouseTest {
         int verse = 6;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -93,6 +99,7 @@ public class HouseTest {
         int verse = 7;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -109,6 +116,7 @@ public class HouseTest {
         int verse = 8;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -126,6 +134,7 @@ public class HouseTest {
         int verse = 9;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -144,6 +153,7 @@ public class HouseTest {
         int verse = 10;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -163,6 +173,7 @@ public class HouseTest {
         int verse = 11;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -183,6 +194,7 @@ public class HouseTest {
         int verse = 12;
 
         assertEquals(expected, house.verse(verse));
+        assertEquals(expected, house.getVerse(verse));
     }
 
     @Test
@@ -222,6 +234,7 @@ public class HouseTest {
         int startVerse = 4;
         int endVerse = 8;
 
+        assertEquals(expected, house.verses(startVerse, endVerse));
         assertEquals(expected, house.verses(startVerse, endVerse));
     }
 
@@ -308,5 +321,6 @@ public class HouseTest {
                 "that lay in the house that Jack built.";
 
         assertEquals(expected, house.sing());
+        assertEquals(expected, house.singWithStreams());
     }
 }
