@@ -23,12 +23,11 @@ def preparation_time_in_minutes(layers):
     :param layers: int - number of layers in lasagna.
     :return: int - total minutes of preparation derived from 'PREPARATION_TIME'
     Function that takes the number of layers the lasagna and returns the time it takes to
-    prepare all layers.    
+    prepare all layers.
     """
     return layers * PREPARATION_TIME
 
 
-# TODO: define the 'elapsed_time_in_minutes()' function
 def elapsed_time_in_minutes(prep_time, bake_time):
     """Calculates the total cooking time for the lasagna.
     :param prep_time: int - total time to prepare lasagna
