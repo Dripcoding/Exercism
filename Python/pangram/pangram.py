@@ -1,5 +1,6 @@
 import re
 from collections import Counter
+from string import ascii_lowercase
 
 def is_pangram(sentence):
     sentence = sentence.lower()
@@ -15,5 +16,12 @@ def is_pangram(sentence):
                 return False
         
     return True
+
+def is_pangram_solution2(sentence):
+    alphabet = set(ascii_lowercase)
     
-    
+    return alphabet.issubset(alphabet)
+
+
+def is_pangram_solution3(sentence):
+    return all( letter in sentence.lower() for letter in ascii_lowercase)
