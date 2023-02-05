@@ -25,10 +25,8 @@ def make_word_groups(vocab_words):
     For example: list('en', 'close', 'joy', 'lighten'),
     produces the following string: 'en :: enclose :: enjoy :: enlighten'.
     """
-    
     prefix = vocab_words[0]
     vocab_words = [prefix + word if word != prefix else word for word in vocab_words]
-    
     return ' :: '.join(vocab_words)
 
 
@@ -53,7 +51,5 @@ def adjective_to_verb(sentence, index):
 
     For example, ("It got dark as the sun set", 2) becomes "darken".
     """
-    
     adjective = sentence.split(' ')[index]
-    
     return adjective.replace('.', '') + 'en'
